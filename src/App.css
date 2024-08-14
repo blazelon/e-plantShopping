@@ -24,15 +24,16 @@
   background-position: center;
   filter: brightness(0.8);
 }
+
 .landing-page-content {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   backdrop-filter: blur(4px);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .landing-page-inner-content {
@@ -98,12 +99,14 @@
 .product-list-container.visible {
   top: 0;
 }
+
 /* LandingPage.css */
 @media screen and (min-width: 1025px) {
   .landing-page-content {
     padding-top: 0;
     flex-direction: row;
   }
+
   .landing-page-inner-content {
     max-width: calc(1024px/3);
     min-height: auto;
