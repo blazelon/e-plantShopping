@@ -20,7 +20,7 @@ const Navbar = ({ onClickLinkItem }) => {
             <a href="#" onClick={(e) => onClickLinkItem(e, 'plants')}>Plants</a>
           </div>
           <div>
-            <a href="#" onClick={(e) => onClickLinkItem(e, 'cart')}><h1 className='cart'><CartIcon /></h1></a>
+            <a href="#" onClick={(e) => onClickLinkItem(e, 'cart')}><CartIcon /></a>
           </div>
         </div>
       </div>
