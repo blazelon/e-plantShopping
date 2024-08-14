@@ -13,7 +13,6 @@ body {
 /* Navbar */
 .navbar {
     background-color: #4CAF50;
-    color: #fff!important;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -109,6 +108,15 @@ body {
 
 .product-button:hover {
     background-color: #c0392b;
+}
+
+.product-button[disabled] {
+    background-color: grey;
+}
+
+.product-button[disabled]:hover {
+    cursor: not-allowed;
+    background-color: grey;
 }
 
 /* Pseudo-elements - Sale badge */
