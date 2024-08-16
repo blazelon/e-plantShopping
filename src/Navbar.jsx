@@ -17,7 +17,7 @@ const Navbar = ({ onClickLinkItem }) => {
 
   return (
     <div className="navbar">
-      <a href='/' className="navbar-brand">
+      <a href="#" onClick={(e) => onClickLinkItem(e, '/')} className="navbar-brand">
         <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
         <div>
           <h3>Paradise Nursery</h3>
@@ -26,10 +26,10 @@ const Navbar = ({ onClickLinkItem }) => {
       </a>
       <div className="navbar-links">
         <div>
-          <a href="#" onClick={(e) => onClickLinkItem(e, 'plants')}>Plants</a>
+          <a href="#" onClick={(e) => onClickLinkItem(e, '/plants')}>Plants</a>
         </div>
         <div>
-          <a href="#" onClick={(e) => onClickLinkItem(e, 'cart')}>
+          <a href="#" onClick={(e) => onClickLinkItem(e, '/cart')}>
             <CartIcon />
             {cartCount}
           </a>

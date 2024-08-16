@@ -1,15 +1,36 @@
+import { useState } from 'react';
 
-import React, { useState } from 'react';
-import ProductList from './ProductList';
 import './App.css';
+import Navbar from './Navbar';
+import ProductList from './ProductList';
+import CartItem from './CartItem';
 import AboutUs from './AboutUs';
 
-function App() {
-  
+function App() {  
   const [showProductList, setShowProductList] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    setShowProductList(false);
+  };
 
   const handleGetStartedClick = () => {
     setShowProductList(true);
+  };
+
+  const handleCartClick = (e) => {
+    e.preventDefault();
+    setShowCart(true);
+  };
+
+  const handlePlantsClick = () => {
+    setShowCart(false);
+  };
+
+  const handleContinueShopping = (e) => {
+    e.preventDefault();
+    setShowCart(false);
   };
 
   return (
@@ -28,7 +49,24 @@ function App() {
         </div>
       </div>
       <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
-        <ProductList />
+        <Navbar
+          onClickLinkItem={(e, linkName) => {
+            e.preventDefault();
+            if (linkName === '/') {
+              handleHomeClick(e)
+            }
+            if (linkName === '/plants') {
+              handlePlantsClick(e)
+            }
+            if (linkName === '/cart') {
+              handleCartClick(e)
+            }
+          }}
+        />
+        {showCart
+          ? <CartItem onContinueShopping={handleContinueShopping} />
+          : <ProductList /> 
+        }
       </div>
     </div>
   );
